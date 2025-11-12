@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Version>0.0.0</Version>
+		<Authors>Marcus Vinicius de Freitas Costa</Authors>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<IsPackable>true</IsPackable>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://www.nuget.org/packages/MVFC.RazorRender</PackageProjectUrl>
+		<PackageTags>razor;blazor;html;render;renderização;cache;híbrido;di;dependency-injection;componentes;email;relatórios;exportação;dotnet;net9</PackageTags>
+		<RepositoryUrl>https://github.com/Marcus-V-Freitas/MVFC.Connectors/tree/master/src/MVFC.RazorRender</RepositoryUrl>
+		<Description>Biblioteca para renderização de componentes Razor em HTML, com suporte a cache híbrido e integração facilitada via DI. Permite transformar componentes Blazor em HTML para cenários como geração de e-mails, relatórios ou exportação de conteúdo dinâmico.</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.*" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Hybrid" Version="10.0.*" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.*" />
+	</ItemGroup>
+
+</Project>

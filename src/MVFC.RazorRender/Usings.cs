@@ -1,0 +1,9 @@
+﻿global using Microsoft.AspNetCore.Components;
+global using Microsoft.AspNetCore.Components.Web;
+global using System.Web;
+global using MVFC.RazorRender.Extensions;
+global using Microsoft.Extensions.DependencyInjection;
+global using MVFC.RazorRender.Services;
+global using MVFC.RazorRender.Interfaces.Parameters;
+global using MVFC.RazorRender.Interfaces.Services;
+global using Microsoft.Extensions.Caching.Hybrid;

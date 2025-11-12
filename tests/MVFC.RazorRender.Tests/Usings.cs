@@ -1,0 +1,10 @@
+﻿global using Microsoft.AspNetCore.Components;
+global using MVFC.RazorRender.Tests.Models;
+global using Microsoft.Extensions.DependencyInjection;
+global using MVFC.RazorRender.Extensions;
+global using MVFC.RazorRender.Tests.Dtos;
+global using MVFC.RazorRender.Tests.Views;
+global using MVFC.RazorRender.Interfaces.Parameters;
+global using MVFC.RazorRender.Interfaces.Services;
+global using Microsoft.Extensions.Caching.Hybrid;
+global using MVFC.RazorRender.Tests.Mock;
