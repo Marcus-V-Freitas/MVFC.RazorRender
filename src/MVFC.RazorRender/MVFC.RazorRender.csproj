@@ -13,7 +13,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://www.nuget.org/packages/MVFC.RazorRender</PackageProjectUrl>
 		<PackageTags>razor;blazor;html;render;renderização;cache;híbrido;di;dependency-injection;componentes;email;relatórios;exportação;dotnet;net9</PackageTags>
-		<RepositoryUrl>https://github.com/Marcus-V-Freitas/MVFC.Connectors/tree/master/src/MVFC.RazorRender</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Marcus-V-Freitas/MVFC.RazorRender</RepositoryUrl>
 		<Description>Biblioteca para renderização de componentes Razor em HTML, com suporte a cache híbrido e integração facilitada via DI. Permite transformar componentes Blazor em HTML para cenários como geração de e-mails, relatórios ou exportação de conteúdo dinâmico.</Description>
 	</PropertyGroup>
 
