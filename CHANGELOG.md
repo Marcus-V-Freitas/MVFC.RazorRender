@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0]
+## [2.0.1] - 2026-03-12
+
+### Added
+
+- Added GitHub Actions CI workflow for automated testing and coverage reporting
+- Added Codecov integration for coverage tracking
+- Added SonarAnalyzer.CSharp for static code analysis across projects
+- Added `CONTRIBUTING.md` and updated `README.md` with NuGet badges and project links
+
+## [2.0.0] - 2026-03-11
 
 ### Changed
 
@@ -46,7 +55,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v2.0.0...v2.0.1
+[2.0.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/releases/tag/v1.0.0
