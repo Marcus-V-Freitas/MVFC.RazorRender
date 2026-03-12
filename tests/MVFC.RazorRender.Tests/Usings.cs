@@ -8,3 +8,5 @@ global using MVFC.RazorRender.Interfaces.Parameters;
 global using MVFC.RazorRender.Interfaces.Services;
 global using Microsoft.Extensions.Caching.Hybrid;
 global using MVFC.RazorRender.Tests.Mock;
+global using Xunit;
+global using FluentAssertions;

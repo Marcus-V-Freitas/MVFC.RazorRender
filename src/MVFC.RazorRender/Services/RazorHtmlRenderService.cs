@@ -1,46 +1,46 @@
-﻿namespace MVFC.RazorRender.Services;
+namespace MVFC.RazorRender.Services;
 
 /// <summary>
-/// Serviço responsável pela renderização de componentes Razor em HTML, sem suporte a cache.
+/// Service responsible for rendering Razor components into HTML, without cache support.
 /// </summary>
-/// <param name="htmlRenderer">Instância do renderizador de HTML utilizado para processar os componentes Razor.</param>
+/// <param name="htmlRenderer">Instance of the HTML renderer used to process Razor components.</param>
 public sealed class RazorHtmlRenderService(HtmlRenderer htmlRenderer)
     : BaseHtmlRenderService<IRazorParameter>, IRazorHtmlRenderService
 {
     private readonly HtmlRenderer _htmlRenderer = htmlRenderer;
 
     /// <summary>
-    /// Gera o HTML de um componente Razor de forma assíncrona.
+    /// Generates the HTML of a Razor component asynchronously.
     /// </summary>
-    /// <typeparam name="TComponent">Tipo do componente Razor a ser renderizado.</typeparam>
-    /// <param name="parameters">Parâmetros para a renderização do componente.</param>
-    /// <returns>Uma tarefa que representa a operação assíncrona, contendo o HTML gerado.</returns>
+    /// <typeparam name="TComponent">Type of the Razor component to be rendered.</typeparam>
+    /// <param name="parameters">Parameters for component rendering.</param>
+    /// <returns>A task representing the asynchronous operation, containing the generated HTML.</returns>
     public override async Task<string> GenerateHtmlAsync<TComponent>(IRazorParameter parameters)
     {
         var html = await _htmlRenderer.Dispatcher.InvokeAsync(async () =>
         {
-            var html = await _htmlRenderer.RenderComponentAsync<TComponent>(ConvertToParameterView(parameters));
+            var html = await _htmlRenderer.RenderComponentAsync<TComponent>(ConvertToParameterView(parameters)).ConfigureAwait(false);
             return html.ToHtmlString();
-        });
+        }).ConfigureAwait(false);
 
         return html.CleanGeneratedHtml();
     }
 
     /// <summary>
-    /// Converte os parâmetros fornecidos em um <see cref="ParameterView"/> para renderização do componente.
+    /// Converts the provided parameters into a <see cref="ParameterView"/> for component rendering.
     /// </summary>
-    /// <typeparam name="TParameters">Tipo dos parâmetros.</typeparam>
-    /// <param name="parameters">Instância dos parâmetros a serem convertidos.</param>
-    /// <returns>Um <see cref="ParameterView"/> representando os parâmetros do componente.</returns>
+    /// <typeparam name="TParameters">Type of parameters.</typeparam>
+    /// <param name="parameters">Instance of the parameters to be converted.</param>
+    /// <returns>A <see cref="ParameterView"/> representing the component parameters.</returns>
     private ParameterView ConvertToParameterView<TParameters>(TParameters parameters) =>
         ParameterView.FromDictionary(ToDictionary(parameters));
 
     /// <summary>
-    /// Converte um objeto de parâmetros em um dicionário de propriedades, ignorando propriedades específicas conforme necessário.
+    /// Converts a parameters object into a dictionary of properties, ignoring specific properties as needed.
     /// </summary>
-    /// <typeparam name="TParameters">Tipo dos parâmetros.</typeparam>
-    /// <param name="parametros">Instância dos parâmetros a serem convertidos.</param>
-    /// <returns>Dicionário contendo os nomes e valores das propriedades dos parâmetros.</returns>
+    /// <typeparam name="TParameters">Type of parameters.</typeparam>
+    /// <param name="parametros">Instance of parameters to be converted.</param>
+    /// <returns>Dictionary containing names and values of coordinate properties.</returns>
     private Dictionary<string, object?> ToDictionary<TParameters>(TParameters parametros)
     {
         ArgumentNullException.ThrowIfNull(parametros);

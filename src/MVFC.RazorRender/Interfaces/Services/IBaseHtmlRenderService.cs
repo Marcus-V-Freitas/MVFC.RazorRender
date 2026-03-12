@@ -1,20 +1,20 @@
-﻿namespace MVFC.RazorRender.Interfaces.Services;
+namespace MVFC.RazorRender.Interfaces.Services;
 
 /// <summary>
-/// Serviço base para geração de HTML a partir de componentes Razor.
+/// Base service for generating HTML from Razor components.
 /// </summary>
 /// <typeparam name="TParameters">
-/// Tipo dos parâmetros utilizados na renderização, que deve implementar <see cref="IRazorParameter"/>.
+/// Type of parameters used in rendering, which must implement <see cref="IRazorParameter"/>.
 /// </typeparam>
 public interface IBaseHtmlRenderService<TParameters>
     where TParameters : IRazorParameter
 {
     /// <summary>
-    /// Gera o HTML de um componente Razor de forma assíncrona.
+    /// Generates the HTML of a Razor component asynchronously.
     /// </summary>
-    /// <typeparam name="TComponent">Tipo do componente Razor a ser renderizado.</typeparam>
-    /// <param name="parameters">Parâmetros para a renderização do componente.</param>
-    /// <returns>Uma tarefa que representa a operação assíncrona, contendo o HTML gerado.</returns>
-    Task<string> GenerateHtmlAsync<TComponent>(TParameters parameters)
+    /// <typeparam name="TComponent">Type of the Razor component to be rendered.</typeparam>
+    /// <param name="parameters">Parameters for component rendering.</param>
+    /// <returns>A task representing the asynchronous operation, containing the generated HTML.</returns>
+    public Task<string> GenerateHtmlAsync<TComponent>(TParameters parameters)
         where TComponent : IComponent;
 }

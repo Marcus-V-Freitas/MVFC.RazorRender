@@ -1,23 +1,23 @@
-﻿namespace MVFC.RazorRender.Extensions;
+namespace MVFC.RazorRender.Extensions;
 
 /// <summary>
-/// Métodos de extensão para facilitar a configuração e manipulação de HTML renderizado via Razor.
+/// Extension methods to facilitate the configuration and manipulation of HTML rendered via Razor.
 /// </summary>
 public static class RazorExtensions
 {
     /// <summary>
-    /// Remove quebras de linha e decodifica entidades HTML do conteúdo gerado.
+    /// Removes line breaks and decodes HTML entities from generated content.
     /// </summary>
-    /// <param name="html">HTML a ser limpo.</param>
-    /// <returns>HTML decodificado e sem quebras de linha.</returns>
+    /// <param name="html">HTML to be cleaned.</param>
+    /// <returns>Decoded HTML without line breaks.</returns>
     public static string CleanGeneratedHtml(this string html) =>
          HttpUtility.HtmlDecode(html)
                     .ReplaceLineEndings(string.Empty);
 
     /// <summary>
-    /// Adiciona os serviços necessários para renderização Razor ao contêiner de injeção de dependência.
+    /// Adds the necessary services for Razor rendering to the dependency injection container.
     /// </summary>
-    /// <param name="services">Coleção de serviços da aplicação.</param>
+    /// <param name="services">Application service collection.</param>
     public static void AddRazorRender(this IServiceCollection services)
     {
         services.AddLogging();
@@ -26,10 +26,10 @@ public static class RazorExtensions
     }
 
     /// <summary>
-    /// Adiciona serviços de renderização Razor com suporte a cache ao contêiner de injeção de dependência.
+    /// Adds Razor rendering services with cache support to the dependency injection container.
     /// </summary>
-    /// <param name="services">Coleção de serviços da aplicação.</param>
-    /// <param name="action">Ação de configuração das opções de cache híbrido.</param>
+    /// <param name="services">Application service collection.</param>
+    /// <param name="action">Action to configure hybrid cache options.</param>
     public static void AddRazorRenderCache(this IServiceCollection services, Action<HybridCacheOptions> action)
     {
         services.AddHybridCache(action);

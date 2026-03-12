@@ -1,6 +1,6 @@
-﻿namespace MVFC.RazorRender.Interfaces.Parameters;
+namespace MVFC.RazorRender.Interfaces.Parameters;
 
 /// <summary>
-/// Representa um parâmetro utilizado na renderização Razor.
+/// Represents a parameter used in Razor rendering.
 /// </summary>
 public interface IRazorParameter;

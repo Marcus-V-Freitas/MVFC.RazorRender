@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MVFC.RazorRender/MVFC.RazorRender.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MVFC.RazorRender.Tests/MVFC.RazorRender.Tests.csproj" />
+  </Folder>
+</Solution>

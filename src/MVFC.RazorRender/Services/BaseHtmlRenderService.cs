@@ -1,30 +1,30 @@
-﻿namespace MVFC.RazorRender.Services;
+namespace MVFC.RazorRender.Services;
 
 /// <summary>
-/// Classe base abstrata para serviços de renderização de HTML a partir de componentes Razor.
+/// Abstract base class for HTML rendering services from Razor components.
 /// </summary>
 /// <typeparam name="TParameters">
-/// Tipo dos parâmetros utilizados na renderização, que deve implementar <see cref="IRazorParameter"/>.
+/// Type of parameters used in rendering, which must implement <see cref="IRazorParameter"/>.
 /// </typeparam>
 public abstract class BaseHtmlRenderService<TParameters> : IBaseHtmlRenderService<TParameters>
     where TParameters : IRazorParameter
 {
     /// <summary>
-    /// Gera o HTML de um componente Razor de forma assíncrona.
+    /// Generates the HTML of a Razor component asynchronously.
     /// </summary>
-    /// <typeparam name="TComponent">Tipo do componente Razor a ser renderizado.</typeparam>
-    /// <param name="parameters">Parâmetros para a renderização do componente.</param>
-    /// <returns>Uma tarefa que representa a operação assíncrona, contendo o HTML gerado.</returns>
+    /// <typeparam name="TComponent">Type of the Razor component to be rendered.</typeparam>
+    /// <param name="parameters">Parameters for component rendering.</param>
+    /// <returns>A task representing the asynchronous operation, containing the generated HTML.</returns>
     public abstract Task<string> GenerateHtmlAsync<TComponent>(TParameters parameters)
         where TComponent : IComponent;
 
     /// <summary>
-    /// Indica se uma propriedade específica deve ser ignorada durante o processamento.
-    /// Por padrão, ignora a propriedade <see cref="IRazorCacheParameter.CacheKey"/>.
+    /// Indicates whether a specific property should be ignored during processing.
+    /// By default, ignores the <see cref="IRazorCacheParameter.CacheKey"/> property.
     /// </summary>
-    /// <param name="propertyName">Nome da propriedade a ser verificada.</param>
+    /// <param name="propertyName">Name of the property to be checked.</param>
     /// <returns>
-    /// <c>true</c> se a propriedade deve ser ignorada; caso contrário, <c>false</c>.
+    /// <c>true</c> if the property should be ignored; otherwise, <c>false</c>.
     /// </returns>
     protected virtual bool SkipSpecificProperties(string propertyName) =>
         propertyName == nameof(IRazorCacheParameter.CacheKey);

@@ -25,7 +25,7 @@ public class RazorRenderTest
         var html = await _razorRenderService.GenerateHtmlAsync<BlogView>(parameters);
 
         // Assert
-        Assert.NotNull(html);
+        html.Should().NotBeNull();
     }
 
     [Fact(DisplayName = "Renderização Razor HTML de Post com Cache")]
@@ -39,6 +39,6 @@ public class RazorRenderTest
         var html = await _cacheRazorHtmlRender.GenerateHtmlAsync<BlogView>(parameters);
 
         // Assert
-        Assert.NotNull(html);
+        html.Should().NotBeNull();
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace MVFC.RazorRender.Interfaces.Services;
+namespace MVFC.RazorRender.Interfaces.Services;
 
 /// <summary>
-/// Serviço para renderização de HTML Razor sem suporte a cache.
+/// Service for rendering Razor HTML without cache support.
 /// </summary>
 public interface IRazorHtmlRenderService : IBaseHtmlRenderService<IRazorParameter>;
