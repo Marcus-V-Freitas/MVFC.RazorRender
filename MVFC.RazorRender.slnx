@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/playground/">
+    <Project Path="playground/MVFC.RazorRender.Playground.Api/MVFC.RazorRender.Playground.Api.csproj" />
+    <Project Path="playground/MVFC.RazorRender.Playground.AppHost/MVFC.RazorRender.Playground.AppHost.csproj" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/MVFC.RazorRender/MVFC.RazorRender.csproj" />
   </Folder>

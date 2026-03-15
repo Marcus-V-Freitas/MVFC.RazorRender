@@ -10,3 +10,12 @@ global using Microsoft.Extensions.Caching.Hybrid;
 global using MVFC.RazorRender.Tests.Mock;
 global using Xunit;
 global using FluentAssertions;
+global using Aspire.Hosting;
+global using Aspire.Hosting.Testing;
+global using Microsoft.Extensions.Hosting;
+global using Projects;
+global using MVFC.RazorRender.Tests.Services;
+global using Refit;
+global using System.Net;
+global using MVFC.RazorRender.Tests.Fixture;
+

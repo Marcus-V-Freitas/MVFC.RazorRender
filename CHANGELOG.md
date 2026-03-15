@@ -1,9 +1,35 @@
-# Changelog
+﻿# Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [3.1.0] - 2026/03/15
+
+### Added
+
+- `playground/` project: runnable ASP.NET Core application demonstrating real-world usage of the library
+  - Welcome email endpoint (`GET /render/welcome`) — renders a Razor component to HTML, cached per email address
+  - Invoice endpoint (`GET /render/invoice`) — renders an invoice component, cached per invoice number
+  - Invoice as string endpoint (`GET /render/invoice/string`) — returns the rendered HTML as a JSON payload, suitable for email dispatch or PDF generation
+  - AppHost project using [MVFC.Aspire.Helpers.Redis](https://github.com/Marcus-V-Freitas/MVFC.Aspire.Helpers) to provision Redis via Docker through .NET Aspire
+- `AddRazorRenderCache` now accepts an optional `redisConnectionString` parameter
+  - When provided, registers `IDistributedCache` via `StackExchange.Redis`, enabling `HybridCache` L2 layer automatically
+  - When omitted, only L1 in-memory cache is used — no breaking change for existing callers
+- Integration tests for the playground using `DistributedApplicationFactory` (Aspire testing pattern):
+  - `ProjectAppHost` — bootstraps the AppHost for test runs
+  - `AppHostFixture` — `IAsyncLifetime` fixture managing the test lifecycle
+  - `AppHostTests` — end-to-end tests covering all render endpoints, cache hit behavior, and content assertions
+
+### Changed
+
+- `README.md` and `README.pt-BR.md` updated with:
+  - New **Playground** section explaining motivation and how to run it
+  - New cache configuration examples covering in-memory only and Redis L2
+  - Explanation of the two-layer cache architecture (L1 memory / L2 Redis)
+
+---
 
 ## [3.0.1] - 2026-03-14
 
@@ -82,7 +108,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v3.0.1...HEAD
+[Unreleased]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v3.0.1...v3.1.0
 [3.0.1]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v2.0.1...v3.0.0
 [2.0.1]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v2.0.0...v2.0.1

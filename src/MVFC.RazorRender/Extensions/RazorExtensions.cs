@@ -1,4 +1,4 @@
-namespace MVFC.RazorRender.Extensions;
+﻿namespace MVFC.RazorRender.Extensions;
 
 /// <summary>
 /// Extension methods to facilitate the configuration and manipulation of HTML rendered via Razor.
@@ -30,8 +30,14 @@ public static class RazorExtensions
     /// </summary>
     /// <param name="services">Application service collection.</param>
     /// <param name="action">Action to configure hybrid cache options.</param>
-    public static void AddRazorRenderCache(this IServiceCollection services, Action<HybridCacheOptions> action)
+    /// <param name="redisConnectionString">Connection string for Redis cache.</param>
+    public static void AddRazorRenderCache(this IServiceCollection services, Action<HybridCacheOptions> action, string? redisConnectionString = null)
     {
+        if (!string.IsNullOrWhiteSpace(redisConnectionString))
+        {
+            services.AddStackExchangeRedisCache(options => options.Configuration = redisConnectionString);
+        }
+
         services.AddHybridCache(action);
         services.AddRazorRender();
         services.AddTransient<ICacheRazorHtmlRenderService, CacheHtmlRenderService>();

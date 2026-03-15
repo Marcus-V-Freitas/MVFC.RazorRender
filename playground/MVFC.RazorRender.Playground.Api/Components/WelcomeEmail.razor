@@ -1,0 +1,17 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bem-vindo</title>
+</head>
+<body style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px">
+    <h1 style="color:#2563eb">Bem-vindo, @Model.Name! </h1>
+    <p>Sua conta foi criada em <strong>@Model.CreatedAt.ToString("dd/MM/yyyy")</strong>.</p>
+    <p>Use o botão abaixo para ativar seu acesso:</p>
+    <a href="@Model.ActivationUrl"
+       style="background:#2563eb;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;display:inline-block">
+        Ativar conta
+    </a>
+    <hr style="margin-top:32px" />
+    <small style="color:#6b7280">Este e-mail foi gerado automaticamente. Não responda.</small>
+</body>
+</html>

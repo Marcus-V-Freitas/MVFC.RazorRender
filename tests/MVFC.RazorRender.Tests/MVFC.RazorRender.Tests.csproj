@@ -9,14 +9,17 @@
 	</PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Aspire.Hosting.Testing" />
       <PackageReference Include="coverlet.collector" />
       <PackageReference Include="FluentAssertions" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" />
       <PackageReference Include="xunit.v3" />
+      <PackageReference Include="Refit" />
       <PackageReference Include="xunit.runner.visualstudio" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\playground\MVFC.RazorRender.Playground.AppHost\MVFC.RazorRender.Playground.AppHost.csproj" />
 	  <ProjectReference Include="..\..\src\MVFC.RazorRender\MVFC.RazorRender.csproj" />
 	</ItemGroup>
 

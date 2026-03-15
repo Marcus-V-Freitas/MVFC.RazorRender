@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Nota Fiscal @Model.InvoiceNumber</title>
+</head>
+<body style="font-family:sans-serif;max-width:700px;margin:auto;padding:24px">
+    <h2>Nota Fiscal — @Model.InvoiceNumber</h2>
+    <p>Cliente: <strong>@Model.CustomerName</strong> | Emitida em: @Model.IssuedAt.ToString("dd/MM/yyyy")</p>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:16px">
+        <thead>
+            <tr style="background:#f3f4f6">
+                <th style="text-align:left;padding:8px;border:1px solid #e5e7eb">Descrição</th>
+                <th style="padding:8px;border:1px solid #e5e7eb">Qtd</th>
+                <th style="padding:8px;border:1px solid #e5e7eb">Valor Unit.</th>
+                <th style="padding:8px;border:1px solid #e5e7eb">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td style="padding:8px;border:1px solid #e5e7eb">@item.Description</td>
+                    <td style="text-align:center;padding:8px;border:1px solid #e5e7eb">@item.Quantity</td>
+                    <td style="text-align:right;padding:8px;border:1px solid #e5e7eb">@item.UnitPrice.ToString("C")</td>
+                    <td style="text-align:right;padding:8px;border:1px solid #e5e7eb">@((item.Quantity * item.UnitPrice).ToString("C"))</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr style="background:#f3f4f6;font-weight:bold">
+                <td colspan="3" style="text-align:right;padding:8px;border:1px solid #e5e7eb">Total</td>
+                <td style="text-align:right;padding:8px;border:1px solid #e5e7eb">@Model.Total.ToString("C")</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+
+@code {
+    
+}
