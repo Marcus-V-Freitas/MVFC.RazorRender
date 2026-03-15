@@ -4,6 +4,8 @@
 [![codecov](https://codecov.io/gh/Marcus-V-Freitas/MVFC.RazorRender/branch/main/graph/badge.svg)](https://codecov.io/gh/Marcus-V-Freitas/MVFC.RazorRender)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 ![Platform](https://img.shields.io/badge/.NET-9%20%7C%2010-blue)
+![NuGet Version](https://img.shields.io/nuget/v/MVFC.RazorRender)
+![NuGet Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender)
 
 Uma biblioteca para renderização de componentes Razor/Blazor em HTML puro, com suporte a cache híbrido e integração facilitada com o sistema de Injeção de Dependência (DI) do .NET. Ideal para cenários como geração de e-mails, relatórios em PDF ou exportação de conteúdo dinâmico no lado do servidor.
 

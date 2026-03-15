@@ -1,6 +1,6 @@
 ﻿namespace MVFC.RazorRender.Tests;
 
-public class RazorRenderTest
+public sealed class RazorRenderTest
 {
     private readonly IServiceCollection _services;
     private readonly IRazorHtmlRenderService _razorRenderService;
