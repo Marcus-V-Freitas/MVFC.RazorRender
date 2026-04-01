@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.2] - 2026-04-01
+
+### Added
+- Explicitly configured `LangVersion`, `AnalysisLevel`, and `AnalysisMode` settings in `Directory.Build.props` for stricter code analysis.
+
+### Changed
+- Refactored `DateTime` to `DateTimeOffset` in `.Mock` and `.Models` to comply with static analysis recommendations.
+- Switched AppHost startup to use asynchronous `RunAsync()` instead of `Run()`.
+- Renamed `Partial` folder and namespaces to `Partials` in the test project to follow naming conventions.
+
+### Fixed
+- Renamed `Directory.Build.target` to `Directory.Build.targets` to be correctly evaluated by MSBuild.
+- Addressed SonarQube rule S1075 by removing hardcoded absolute URIs in `MockEntities.cs` and using `UriBuilder` instead.
+
 ## [4.0.1] - 2026-04-01
 
 ### Changed
@@ -129,6 +143,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[4.0.2]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v3.1.1...v4.0.0
 [3.1.1]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v3.1.0...v3.1.1

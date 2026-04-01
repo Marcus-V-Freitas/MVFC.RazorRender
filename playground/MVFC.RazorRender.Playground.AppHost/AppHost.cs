@@ -6,4 +6,4 @@ builder.AddProject<Projects.MVFC_RazorRender_Playground_Api>("razor-render-api")
        .WaitFor(redis)
        .WithReference(redis);
 
-builder.Build().Run();
+await builder.Build().RunAsync();

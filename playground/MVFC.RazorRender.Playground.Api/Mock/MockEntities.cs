@@ -1,4 +1,4 @@
-﻿namespace MVFC.RazorRender.Playground.Api.Mock;
+namespace MVFC.RazorRender.Playground.Api.Mock;
 
 public static class MockEntities
 {
@@ -8,7 +8,7 @@ public static class MockEntities
             Model = new InvoiceModel(
                 CustomerName: "Acme Corp",
                 InvoiceNumber: number,
-                IssuedAt: DateTime.Now,
+                IssuedAt: DateTimeOffset.Now,
                 Items:
                 [
                     new("Licença anual MVFC.Suite", 1, 1200.00m),
@@ -23,7 +23,7 @@ public static class MockEntities
              Model = new WelcomeEmailModel(
                  Name: "Marcus",
                  Email: email,
-                 CreatedAt: DateTime.Now,
-                 ActivationUrl: "https://example.com/activate/abc123")
+                 CreatedAt: DateTimeOffset.Now,
+                 ActivationUrl: new UriBuilder(Uri.UriSchemeHttps, "example.com", -1, "activate/abc123").Uri.AbsoluteUri)
          };
 }

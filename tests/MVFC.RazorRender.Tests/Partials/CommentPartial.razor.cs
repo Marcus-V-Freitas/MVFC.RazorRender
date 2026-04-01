@@ -1,4 +1,4 @@
-﻿namespace MVFC.RazorRender.Tests.Partial;
+﻿namespace MVFC.RazorRender.Tests.Partials;
 
 public partial class CommentPartial : ComponentBase
 {

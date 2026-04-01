@@ -3,5 +3,5 @@
 public sealed record WelcomeEmailModel(
     string Name,
     string Email,
-    DateTime CreatedAt,
+    DateTimeOffset CreatedAt,
     string ActivationUrl);
