@@ -3,9 +3,9 @@
 [![CI](https://github.com/Marcus-V-Freitas/MVFC.RazorRender/actions/workflows/ci.yml/badge.svg)](https://github.com/Marcus-V-Freitas/MVFC.RazorRender/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/Marcus-V-Freitas/MVFC.RazorRender/branch/main/graph/badge.svg)](https://codecov.io/gh/Marcus-V-Freitas/MVFC.RazorRender)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-![Platform](https://img.shields.io/badge/.NET-9%20%7C%2010-blue)
-![NuGet Version](https://img.shields.io/nuget/v/MVFC.RazorRender)
-![NuGet Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender)
+![Platform](https://img.shields.io/badge/.NET-9_%7C_10-blue?logo=dotnet)
+![NuGet Version](https://img.shields.io/nuget/v/MVFC.RazorRender?logo=nuget)
+![NuGet Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender?logo=nuget)
 
 Uma biblioteca para renderização de componentes Razor/Blazor em HTML puro, com suporte a cache híbrido e integração facilitada com o sistema de Injeção de Dependência (DI) do .NET. Ideal para cenários como geração de e-mails, relatórios em PDF ou exportação de conteúdo dinâmico no lado do servidor.
 
@@ -27,7 +27,7 @@ Uma biblioteca para renderização de componentes Razor/Blazor em HTML puro, com
 
 | Package | Downloads |
 |---|---|
-| [MVFC.RazorRender](src/MVFC.RazorRender/README.md) | ![Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender) |
+| [MVFC.RazorRender](src/MVFC.RazorRender/README.md) | ![Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender?logo=nuget) |
 
 ---
 
