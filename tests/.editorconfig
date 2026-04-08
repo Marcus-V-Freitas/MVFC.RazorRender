@@ -1,0 +1,5 @@
+root = false
+
+[*.cs]
+# Ignorar regra CA1707 (Identificadores não devem conter underscores) para os arquivos de teste
+dotnet_diagnostic.CA1707.severity = none
