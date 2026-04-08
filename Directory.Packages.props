@@ -6,7 +6,7 @@
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.1.1" />
     <PackageVersion Include="Aspire.Hosting.Testing" Version="13.1.1" />
     <PackageVersion Include="MVFC.Aspire.Helpers.Redis" Version="6.4.1" />
-    <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.19.0.132793" />
+    <PackageVersion Include="MVFC.Pack.Analyzers" Version="4.0.0" />
     <PackageVersion Include="coverlet.collector" Version="8.0.0" />
     <PackageVersion Include="FluentAssertions" Version="[7.0.0]" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />

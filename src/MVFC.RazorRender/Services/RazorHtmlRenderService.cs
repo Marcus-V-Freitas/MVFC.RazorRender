@@ -1,4 +1,4 @@
-namespace MVFC.RazorRender.Services;
+﻿namespace MVFC.RazorRender.Services;
 
 /// <summary>
 /// Service responsible for rendering Razor components into HTML, without cache support.
@@ -45,7 +45,7 @@ public sealed class RazorHtmlRenderService(HtmlRenderer htmlRenderer)
     {
         ArgumentNullException.ThrowIfNull(parametros);
 
-        var dict = new Dictionary<string, object?>();
+        var dict = new Dictionary<string, object?>(StringComparer.Ordinal);
 
         foreach (var prop in parametros.GetType().GetProperties())
         {

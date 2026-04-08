@@ -1,4 +1,4 @@
-namespace MVFC.RazorRender.Services;
+﻿namespace MVFC.RazorRender.Services;
 
 /// <summary>
 /// Abstract base class for HTML rendering services from Razor components.
@@ -27,5 +27,5 @@ public abstract class BaseHtmlRenderService<TParameters> : IBaseHtmlRenderServic
     /// <c>true</c> if the property should be ignored; otherwise, <c>false</c>.
     /// </returns>
     protected virtual bool SkipSpecificProperties(string propertyName) =>
-        propertyName == nameof(IRazorCacheParameter.CacheKey);
+        string.Equals(propertyName, nameof(IRazorCacheParameter.CacheKey), StringComparison.Ordinal);
 }

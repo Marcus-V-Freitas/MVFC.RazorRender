@@ -459,7 +459,14 @@ dotnet_diagnostic.RCS1036.severity = warning
 dotnet_diagnostic.RCS1213.severity = warning
 
 # ──────────────────────────────────────────────────────────
-# 15. ARQUIVOS GERADOS — sem análise
+# 15. MEZIANTOU.ANALYZER
+# ──────────────────────────────────────────────────────────
+
+# File name must match type name (class Program)
+dotnet_diagnostic.MA0048.severity = none
+
+# ──────────────────────────────────────────────────────────
+# 16. ARQUIVOS GERADOS — sem análise
 # ──────────────────────────────────────────────────────────
 [**/{obj,bin,publish,migrations}/**/*.cs]
 generated_code = true
