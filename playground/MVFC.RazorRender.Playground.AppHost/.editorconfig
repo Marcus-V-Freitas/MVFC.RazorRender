@@ -1,6 +1,4 @@
 root = false
 
-# O AppHost.cs usa top-level statements, então o compilador gera a classe Program.
-# Isso conflita com a regra MA0048. Ignoraremos apenas para esse arquivo.
-[**/AppHost.cs]
+[*.cs]
 dotnet_diagnostic.MA0048.severity = none
