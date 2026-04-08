@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bypassed `CopyEditorConfigToSolutionRoot` target locally to resolve `MSB3030` build errors.
 - Delegated global styling rules to the internal `MVFC.Pack.Analyzers` package by deleting `.editorconfig` from root.
 - Re-suppressed `MA0048` for `AppHost.cs` and `CA1707` for test projects using scoped `.editorconfig` files.
+- Fixed CI rollback script by adding the missing `actions/checkout@v4` step to the `cleanup-tag-on-failure` job.
 
 ## [4.0.4] - 2026-04-08
 
