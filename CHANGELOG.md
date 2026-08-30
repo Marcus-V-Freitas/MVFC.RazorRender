@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.7] - 2026-08-29
+
+### Added
+- Configured `<AspireUseCliBundle>true</AspireUseCliBundle>` in `MVFC.RazorRender.Playground.AppHost` to run DCP standalone, avoiding IDE-side 500 errors on F5 launch.
+- Added `Microsoft.Testing.Platform` package reference to `MVFC.RazorRender.Tests`.
+
+### Changed
+- Upgraded `Aspire.AppHost.Sdk` in `MVFC.RazorRender.Playground.AppHost` from `13.1.1` to `13.5.3`.
+- Updated central package dependencies in `Directory.Packages.props`, including `Aspire.Hosting` libraries to `13.5.3` and testing packages.
+- Configured package reference properties for `xunit.runner.visualstudio` in the test project.
+- Standardized file formatting and clean/coverage command runner options in `build.cake`.
+
 ## [4.0.6] - 2026-06-25
 
 ### Changed
@@ -169,6 +181,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[4.0.7]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.6...v4.0.7
 [4.0.6]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.5...v4.0.6
 [4.0.5]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.4...v4.0.5
 [4.0.4]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.3...v4.0.4
