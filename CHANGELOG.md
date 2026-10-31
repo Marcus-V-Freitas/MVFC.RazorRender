@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.8] - 2026-10-31
+
+### Added
+- Enabled `<CentralPackageTransitivePinningEnabled>` in `Directory.Packages.props` for transitive package pinning.
+- Configured `PrivateAssets` and `IncludeAssets` metadata for `coverlet.collector` in `MVFC.RazorRender.Tests`.
+
+### Changed
+- Upgraded `Aspire.AppHost.Sdk` in `MVFC.RazorRender.Playground.AppHost` from `13.5.3` to `13.6.0`.
+- Updated central package dependencies in `Directory.Packages.props`:
+  - Upgraded `Aspire.Hosting.AppHost` and `Aspire.Hosting.Testing` to `13.6.4`.
+  - Upgraded `MVFC.Aspire.Helpers.Redis` to `10.1.1`.
+  - Upgraded .NET 10 packages (`Microsoft.AspNetCore.Components.Web`, `Microsoft.Extensions.Caching.StackExchangeRedis`, and `Microsoft.Extensions.Logging` to `10.0.14`, and `Microsoft.Extensions.Caching.Hybrid` to `10.11.0`).
+  - Upgraded test and tool dependencies (`Microsoft.NET.Test.Sdk` to `18.11.0`, `Microsoft.Testing.Platform` to `2.5.2`, `xunit.v3` to `4.0.2`, `xunit.runner.visualstudio` to `4.0.1`, `coverlet.collector` to `10.1.0`, `MessagePack` to `3.1.12`, and `MinVer` to `8.1.0-alpha.1`).
+  - Explicitly pinned package versions for .NET 9 target framework dependencies.
+
 ## [4.0.7] - 2026-08-29
 
 ### Added
@@ -181,6 +196,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[4.0.8]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.7...v4.0.8
 [4.0.7]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.6...v4.0.7
 [4.0.6]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.5...v4.0.6
 [4.0.5]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.4...v4.0.5
