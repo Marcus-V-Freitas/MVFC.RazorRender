@@ -3,7 +3,7 @@
 [![CI](https://github.com/Marcus-V-Freitas/MVFC.RazorRender/actions/workflows/ci.yml/badge.svg)](https://github.com/Marcus-V-Freitas/MVFC.RazorRender/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/Marcus-V-Freitas/MVFC.RazorRender/branch/main/graph/badge.svg)](https://codecov.io/gh/Marcus-V-Freitas/MVFC.RazorRender)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-![Platform](https://img.shields.io/badge/.NET-9%20%7C%2010-blue)
+![Platform](https://img.shields.io/badge/.NET-9%20%7C%2010%20%7C%2011-blue)
 ![NuGet Version](https://img.shields.io/nuget/v/MVFC.RazorRender)
 ![NuGet Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender)
 
@@ -25,8 +25,8 @@ A library for rendering Razor/Blazor components into pure HTML, with support for
 
 ## Package
 
-| Package | Downloads |
-|---|---|
+| Package                                            | Downloads                                                      |
+| -------------------------------------------------- | -------------------------------------------------------------- |
 | [MVFC.RazorRender](src/MVFC.RazorRender/README.md) | ![Downloads](https://img.shields.io/nuget/dt/MVFC.RazorRender) |
 
 ---
@@ -158,11 +158,11 @@ The `playground/` directory contains a runnable ASP.NET Core application that de
 
 Then open the Aspire dashboard and navigate to the `playground` service. Available endpoints:
 
-| Endpoint | Description |
-|---|---|
-| `GET /render/welcome?email=...` | Renders a welcome email (cached per email) |
+| Endpoint                         | Description                                    |
+| -------------------------------- | ---------------------------------------------- |
+| `GET /render/welcome?email=...`  | Renders a welcome email (cached per email)     |
 | `GET /render/invoice?number=...` | Renders an invoice (cached per invoice number) |
-| `GET /render/invoice/string` | Returns the rendered HTML as a JSON string |
+| `GET /render/invoice/string`     | Returns the rendered HTML as a JSON string     |
 
 > Without Redis (i.e., without running the AppHost), the playground still works using L1 in-memory cache only.
 
@@ -170,14 +170,14 @@ Then open the Aspire dashboard and navigate to the `playground` service. Availab
 
 ## Key Interfaces & Classes
 
-| Type | Description |
-|------|-------------|
-| `IRazorHtmlRenderService` | Renders Razor components to HTML without cache |
-| `ICacheRazorHtmlRenderService` | Renders Razor components to HTML with hybrid cache |
-| `IRazorParameter` | Marker interface for render parameters |
-| `IRazorCacheParameter` | Extends `IRazorParameter` with a `CacheKey` property |
-| `BaseHtmlRenderService<T>` | Abstract base class shared by both service implementations |
-| `RazorExtensions` | Extension methods: `AddRazorRender()` and `AddRazorRenderCache()` |
+| Type                           | Description                                                       |
+| ------------------------------ | ----------------------------------------------------------------- |
+| `IRazorHtmlRenderService`      | Renders Razor components to HTML without cache                    |
+| `ICacheRazorHtmlRenderService` | Renders Razor components to HTML with hybrid cache                |
+| `IRazorParameter`              | Marker interface for render parameters                            |
+| `IRazorCacheParameter`         | Extends `IRazorParameter` with a `CacheKey` property              |
+| `BaseHtmlRenderService<T>`     | Abstract base class shared by both service implementations        |
+| `RazorExtensions`              | Extension methods: `AddRazorRender()` and `AddRazorRenderCache()` |
 
 ---
 

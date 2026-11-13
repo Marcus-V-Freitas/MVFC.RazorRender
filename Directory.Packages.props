@@ -2,33 +2,41 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <Net10Version>10.0.14</Net10Version>
+    <Net11Version>11.0.0</Net11Version>
+    <AspireVersion>13.6.5</AspireVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="MessagePack" Version="3.1.12" />
-    <PackageVersion Include="Microsoft.Testing.Platform" Version="2.5.2" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.6.4" />
-    <PackageVersion Include="Aspire.Hosting.Testing" Version="13.6.4" />
-    <PackageVersion Include="MVFC.Aspire.Helpers.Redis" Version="10.1.1" />
-    <PackageVersion Include="MVFC.Pack.Analyzers" Version="4.0.1" />
+    <PackageVersion Include="Microsoft.Testing.Platform" Version="2.5.3" />
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
+    <PackageVersion Include="Aspire.Hosting.Testing" Version="$(AspireVersion)" />
+    <PackageVersion Include="MVFC.Aspire.Helpers.Redis" Version="11.0.0" />
+    <PackageVersion Include="MVFC.Pack.Analyzers" Version="4.0.2" />
     <PackageVersion Include="coverlet.collector" Version="10.1.0" />
     <PackageVersion Include="FluentAssertions" Version="[7.0.0]" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.11.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.1" />
-    <PackageVersion Include="xunit.v3" Version="4.0.2" />
+    <PackageVersion Include="xunit.v3" Version="4.0.3" />
     <PackageVersion Include="MinVer" Version="8.1.0-alpha.1" />
+    <PackageVersion Include="Refit" Version="16.4.0" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
     <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="[9.0.14]" />
     <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="[9.10.0]" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="[9.0.14]" />
     <PackageVersion Include="Microsoft.Extensions.Logging" Version="[9.0.14]" />
-    <PackageVersion Include="Refit" Version="9.0.2" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
-    <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.14" />
-    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.11.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="10.0.14" />
-    <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.14" />
-    <PackageVersion Include="Refit" Version="[10.2.0]" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="$(Net10Version)" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="[10.11.0]" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="$(Net10Version)" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(Net10Version)" />   
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net11.0'">
+    <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="$(Net11Version)" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="$(Net11Version)" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="$(Net11Version)" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(Net11Version)" />   
   </ItemGroup>
 </Project>

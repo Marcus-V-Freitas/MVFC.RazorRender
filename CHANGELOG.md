@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0] - 2026-11-12
+
+### Added
+- Support for .NET 11 (`net11.0`) target framework in `MVFC.RazorRender` (`net9.0;net10.0;net11.0`).
+- Configured local .NET tools in `.config/dotnet-tools.json` (`dotnet-coverage` v18.12.0 and `dotnet-reportgenerator-globaltool` v5.3.11).
+- Added comprehensive root `.editorconfig` enforcing C# and .NET coding conventions, Roslyn analyzers, and MVFC standards.
+- Added `global.json` with SDK rollForward and prerelease support for .NET 11.
+
+### Changed
+- Migrated playground projects (`MVFC.RazorRender.Playground.Api` and `MVFC.RazorRender.Playground.AppHost`) and test project (`MVFC.RazorRender.Tests`) to target `net11.0`.
+- Updated central package dependencies in `Directory.Packages.props`:
+  - Upgraded `Aspire.Hosting.AppHost` and `Aspire.Hosting.Testing` to `13.6.5`.
+  - Upgraded `MVFC.Aspire.Helpers.Redis` to `11.0.0`.
+  - Upgraded `MVFC.Pack.Analyzers` to `4.0.2`.
+  - Upgraded test tools (`Microsoft.NET.Test.Sdk` to `18.12.0`, `Microsoft.Testing.Platform` to `2.5.3`, and `xunit.v3` to `4.0.3`).
+  - Upgraded `Refit` centrally to `16.4.0`.
+  - Added centralized package versions for .NET 11 dependencies (`Microsoft.AspNetCore.Components.Web`, `Microsoft.Extensions.Caching.StackExchangeRedis`, `Microsoft.Extensions.Caching.Hybrid`, and `Microsoft.Extensions.Logging` to `11.0.0`).
+- Updated `build.cake` to run pinned local tools (`dotnet tool restore` and `dotnet tool run`) instead of ad-hoc installations into `./tools`.
+- Overhauled GitHub Actions CI/CD workflow (`ci.yml`):
+  - Added multi-SDK setup for .NET 9, 10, and 11.
+  - Standardized Cake and tool execution via `dotnet tool restore`.
+  - Hardened publish pipeline with commit-to-main validation, OIDC token authentication, and release environment protections.
+- Updated Refit interface generation in `AppHostFixture` from `RestService.For<T>` to `RestService.ForGenerated<T>`.
+- Updated `Directory.Build.targets` condition to evaluate `'$(IsTestProject)' != 'true'` and removed redundant `CopyEditorConfigToSolutionRoot` target.
+- Updated `README.md` and `README.pt-br.md` badges and documentation to reflect .NET 9, 10, and 11 support.
+
 ## [4.0.8] - 2026-10-31
 
 ### Added
@@ -196,6 +222,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[5.0.0]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.8...v5.0.0
 [4.0.8]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.7...v4.0.8
 [4.0.7]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.6...v4.0.7
 [4.0.6]: https://github.com/Marcus-V-Freitas/MVFC.RazorRender/compare/v4.0.5...v4.0.6
